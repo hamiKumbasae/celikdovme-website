@@ -49,6 +49,29 @@
     var map = document.querySelector('.map-frame iframe');
     if (map && config.mapQuery) map.src = 'https://www.google.com/maps?q=' + encodeURIComponent(config.mapQuery) + '&output=embed';
 
+
+    // Shared bilingual product catalog. Add new items in js/products.js.
+    var gallery = document.getElementById('productGallery');
+    var products = window.CELIKDOVME_PRODUCTS;
+    if (gallery && Array.isArray(products)) {
+      var locale = document.documentElement.lang === 'en' ? 'en' : 'tr';
+      products.forEach(function (product) {
+        if (!product.image || !product[locale]) return;
+        var figure = document.createElement('figure');
+        figure.className = 'gallery-item';
+        var img = document.createElement('img');
+        img.src = product.image;
+        img.alt = product[locale].alt || product[locale].title || '';
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        var caption = document.createElement('figcaption');
+        caption.textContent = product[locale].title || '';
+        figure.appendChild(img);
+        figure.appendChild(caption);
+        gallery.appendChild(figure);
+      });
+    }
+
     var form = document.getElementById('quoteForm');
     if (form) {
       var statusEl = document.getElementById('qfStatus');
