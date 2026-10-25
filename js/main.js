@@ -33,6 +33,45 @@
       revealEls.forEach(function (el) { io.observe(el); });
     }
 
+
+    // Contact details are maintained in js/config.js for both languages.
+    var config = window.CELIKDOVME_CONFIG || {};
+    document.querySelectorAll('a[href^="tel:"]').forEach(function (a) { if (config.phone) a.href = 'tel:' + config.phone; });
+    document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) { if (config.email) { a.href = 'mailto:' + config.email; var label = a.querySelector('.cc-value'); if (label) label.textContent = config.email; } });
+    document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function (a) { if (config.whatsapp) a.href = 'https://wa.me/' + config.whatsapp; });
+    document.querySelectorAll('.contact-card').forEach(function (a) {
+      var label = a.querySelector('.cc-label'); var value = a.querySelector('.cc-value');
+      if (!label || !value) return;
+      var language = document.documentElement.lang === 'en' ? 'phoneDisplayEN' : 'phoneDisplayTR';
+      if (/WhatsApp/i.test(label.textContent) && config[language]) value.textContent = config[language];
+      else if (/Telefon|Phone/i.test(label.textContent) && config[language]) value.textContent = config[language];
+    });
+    var map = document.querySelector('.map-frame iframe');
+    if (map && config.mapQuery) map.src = 'https://www.google.com/maps?q=' + encodeURIComponent(config.mapQuery) + '&output=embed';
+
+
+    // Shared bilingual product catalog. Add new items in js/products.js.
+    var gallery = document.getElementById('productGallery');
+    var products = window.CELIKDOVME_PRODUCTS;
+    if (gallery && Array.isArray(products)) {
+      var locale = document.documentElement.lang === 'en' ? 'en' : 'tr';
+      products.forEach(function (product) {
+        if (!product.image || !product[locale]) return;
+        var figure = document.createElement('figure');
+        figure.className = 'gallery-item';
+        var img = document.createElement('img');
+        img.src = product.image;
+        img.alt = product[locale].alt || product[locale].title || '';
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        var caption = document.createElement('figcaption');
+        caption.textContent = product[locale].title || '';
+        figure.appendChild(img);
+        figure.appendChild(caption);
+        gallery.appendChild(figure);
+      });
+    }
+
     var form = document.getElementById('quoteForm');
     if (form) {
       var statusEl = document.getElementById('qfStatus');
@@ -40,9 +79,10 @@
       form.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        var accessKey = form.access_key.value;
-        if (!accessKey || accessKey === 'WEB3FORMS_ACCESS_KEY_BURAYA') {
-          statusEl.textContent = 'Form henüz aktif değil — Web3Forms access key eklenmedi.';
+        var accessKey = config.web3formsAccessKey || '';
+        form.access_key.value = accessKey;
+        if (!accessKey) {
+          statusEl.textContent = document.documentElement.lang === 'en' ? 'The quote form is not configured yet. Please contact us by email or phone.' : 'Teklif formu henüz yapılandırılmadı. Lütfen e-posta veya telefonla ulaşın.';
           statusEl.className = 'form-status err';
           return;
         }
