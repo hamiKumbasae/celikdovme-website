@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://celikdovme.net/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://celikdovme.net/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://celikdovme.net/en.html"/>
+  </url>
+  <url>
+    <loc>https://celikdovme.net/en.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://celikdovme.net/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://celikdovme.net/en.html"/>
+  </url>
+</urlset>
