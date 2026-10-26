@@ -92,7 +92,10 @@ p { margin: 0; }
 .nav { display: flex; align-items: center; gap: 22px; }
 .nav a { color: var(--steel); text-decoration: none; font-size: .95rem; font-weight: 550; }
 .nav a:hover { color: var(--red); }
-.nav .lang { color: var(--iron); padding-left: 18px; border-left: 1px solid var(--rule); }
+.nav .langs { display: flex; gap: 10px; padding-left: 18px; border-left: 1px solid var(--rule); }
+.nav .langs a { color: var(--iron); font-size: .8rem; font-weight: 600; letter-spacing: .04em; }
+.nav .langs a[aria-current] { color: var(--steel); text-decoration: underline; text-decoration-color: var(--red); text-underline-offset: 5px; text-decoration-thickness: 2px; }
+.nav .langs a:hover { color: var(--red); }
 .header-cta { min-height: 42px; padding: 0 18px; }
 .menu-btn { display: none; width: 44px; height: 44px; background: none; border: 1px solid var(--rule); border-radius: 3px; cursor: pointer; }
 .menu-btn svg { width: 22px; height: 22px; fill: none; stroke: var(--steel); stroke-width: 1.8; stroke-linecap: round; }
@@ -224,7 +227,8 @@ p { margin: 0; }
   }
   .nav.open { display: flex; }
   .nav a { padding: 12px 0; font-size: 1.05rem; border-bottom: 1px solid var(--rule); }
-  .nav .lang { padding-left: 0; border-left: 0; border-bottom: 0; }
+  .nav .langs { padding: 14px 0 0; border-left: 0; gap: 20px; }
+  .nav .langs a { padding: 6px 0; border-bottom: 0; font-size: .95rem; }
   .site-header { position: sticky; }
 
   .hero-grid, .two-col, .contact-grid { grid-template-columns: 1fr; }
@@ -264,3 +268,16 @@ p { margin: 0; }
   .quickbar a + a { border-left: 1px solid rgba(255,255,255,.12); }
   .quickbar a:nth-child(2) { background: var(--red); }
 }
+
+/* Dil seçici (alt bilgi) */
+.footer-langs a { color: var(--on-dark-2); }
+.footer-langs a[aria-current] { color: var(--white); text-decoration: none; }
+
+/* Korece, Japonca, Çince */
+:lang(ko) body { font-family: "Archivo", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif; word-break: keep-all; }
+:lang(ja) body { font-family: "Archivo", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", "Noto Sans JP", sans-serif; line-break: strict; }
+:lang(zh-Hans) body { font-family: "Archivo", "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif; }
+:lang(ko) h1, :lang(ja) h1, :lang(zh-Hans) h1,
+:lang(ko) h2, :lang(ja) h2, :lang(zh-Hans) h2 { font-stretch: 100%; letter-spacing: 0; line-height: 1.25; }
+:lang(ko) .hero h1, :lang(ja) .hero h1, :lang(zh-Hans) .hero h1 { max-width: 11em; }
+:lang(ko) p, :lang(ja) p, :lang(zh-Hans) p { line-height: 1.75; }

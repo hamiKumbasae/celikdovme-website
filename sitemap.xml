@@ -4,10 +4,40 @@
     <loc>https://celikdovme.net/</loc>
     <xhtml:link rel="alternate" hreflang="tr" href="https://celikdovme.net/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://celikdovme.net/en.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://celikdovme.net/ko.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://celikdovme.net/ja.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://celikdovme.net/zh.html"/>
   </url>
   <url>
     <loc>https://celikdovme.net/en.html</loc>
     <xhtml:link rel="alternate" hreflang="tr" href="https://celikdovme.net/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://celikdovme.net/en.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://celikdovme.net/ko.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://celikdovme.net/ja.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://celikdovme.net/zh.html"/>
+  </url>
+  <url>
+    <loc>https://celikdovme.net/ko.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://celikdovme.net/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://celikdovme.net/en.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://celikdovme.net/ko.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://celikdovme.net/ja.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://celikdovme.net/zh.html"/>
+  </url>
+  <url>
+    <loc>https://celikdovme.net/ja.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://celikdovme.net/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://celikdovme.net/en.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://celikdovme.net/ko.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://celikdovme.net/ja.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://celikdovme.net/zh.html"/>
+  </url>
+  <url>
+    <loc>https://celikdovme.net/zh.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://celikdovme.net/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://celikdovme.net/en.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://celikdovme.net/ko.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://celikdovme.net/ja.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://celikdovme.net/zh.html"/>
   </url>
 </urlset>
